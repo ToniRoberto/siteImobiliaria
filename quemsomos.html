@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Trento Construtora - Quem Somos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1F1F1F;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .gold-border {
+            border-color: #D4AF37;
+        }
+
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+
+        .dark-bg {
+            background-color: #1F1F1F;
+        }
+
+        .darker-bg {
+            background-color: #171717;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-scrolled {
+            background-color: rgba(31, 31, 31, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(31, 31, 31, 0.9), rgba(31, 31, 31, 0.7));
+        }
+
+        .about-overlay {
+            background: linear-gradient(to right, rgba(31, 31, 31, 0.9), rgba(31, 31, 31, 0.5));
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+
+<body class="dark-bg">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text title-font">M.Trento</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="video" class="text-white hover:gold-text transition">Videos</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden darker-bg w-full px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="video" class="text-white hover:gold-text transition">Videos</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+    <section class="py-20 section darker-bg pt-40">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 gold-text title-font">Quem somos</h1>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">Construímos lares. Cultivamos memórias.</p>
+                <p  style="text-align: justify;">Do sonho de construir algo maior do que paredes, nasceu a M Trento.
+                    Unimos nossos desejos, nossas raízes e nossa paixão pela construção para criar não apenas uma
+                    empresa — mas um legado.</p>
+            </div>
+        </div>
+    </section>
+    <div
+        style="background-color: #fff; height: 150px; color: #1F1F1F; display: flex; flex-direction: row; justify-content: center; align-items: center; padding-left: 10%; padding-right: 10%; text-align: center;">
+        <p>A cada obra, levamos conosco uma certeza: por trás de cada tijolo, há vidas.
+            Há pessoas que colocam seu talento, sua dedicação e seu coração em transformar cimento em abrigo.
+            Paredes que acolhem histórias, risos, encontros, silêncios e os momentos mais preciosos da vida ao lado de
+            quem se ama.</p>
+    </div>
+    <section id="historia" class="py-20 section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 gold-text title-font">Nossa História</h2>
+                    <h3 class="text-3xl md:text-2xl font-bold mb-6 gold-text title-font">Por que M Trento?</h3>
+                    <p class="text-gray-300 mb-6 text-lg leading-relaxed"  style="text-align: justify;">
+                        Porque carregamos em nosso nome a força das nossas origens.
+                        Somos descendentes de Trentinos — homens e mulheres que ergueram o futuro com as próprias mãos.
+                        A construção civil corre em nossas veias. Aprendemos com nossos pais, avós e tios que cada obra
+                        é
+                        mais que um projeto: é um compromisso com o cuidado, a excelência e o amor ao que se faz..
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed"  style="text-align: justify;">
+                        E é isso que entregamos em cada detalhe:
+                        Uma história de família. Um saber que atravessa gerações. Uma construção feita com alma.
+
+                        E é nessa alma que firmamos nossos pilares:
+                        A união que nos fortalece, o amor que nos move e a fé que nos guia.
+                        São essas as bases invisíveis, mas inabaláveis, que sustentam não só nossos projetos — mas a
+                        nossa vida.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="valores" class="py-20 section darker-bg">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="text-center p-8 rounded-lg">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-bullseye text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold gold-text title-font mb-4">Nossa Missão</h3>
+                    <p class="text-gray-300">
+                        Construir lares com alma, unindo tradição, excelência e cuidado para transformar sonhos em
+                        realidade.
+                    </p>
+                </div>
+                <div class="text-center p-8 rounded-lg">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-eye text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold gold-text title-font mb-4">Nossa Visão</h3>
+                    <p class="text-gray-300">
+                        Ser reconhecida como uma construtora que entrega mais do que imóveis: entrega histórias,
+                        memórias e experiências inesquecíveis.
+                    </p>
+                </div>
+                <div class="text-center p-8 rounded-lg">
+                    <div class="gold-text mb-4">
+                        <i class="fas fa-gem text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold gold-text title-font mb-4">Nossos Valores</h3>
+                    <p class="text-gray-300">Paixão em cada detalhe
+                        Colocamos amor no que fazemos, porque construir é também sentir.</p></br>
+                    <ul class="text-gray-300 text-left inline-block list-disc list-inside">
+                        <li><b>Tradição como legado:</b> Nossas raízes familiares nos guiam e dão sentido a cada
+                            projeto.</li>
+                        <li><b>Excelência com propósito:</b> Buscamos o melhor, sempre com beleza, verdade e intenção.
+                        </li>
+                        <li><b>Cuidado com as pessoas:</b> Valorizamos quem está conosco, porque gente é o que mais
+                            importa.</li>
+                        <li><b>Transparência que gera confiança:</b> Fazemos com verdade, porque confiança se constrói
+                            com clareza.</li>
+                        <li><b>Fé que sustenta, amor que nos move:</b> Acreditamos que toda grande construção começa no
+                            invisível — na fé, no amor e na união que carregamos como alicerce da vida.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="py-20 section">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">M. Trento: Construindo com Paixão e
+                Tradição</h2>
+            <p class="text-gray-300 mx-auto mb-8" style="text-align: justify;">
+                Na M. Trento, acreditamos que cada projeto é uma oportunidade única de criar algo especial. A nossa
+                essência se reflete em tudo o que fazemos, e o nosso compromisso vai além da construção – trata-se
+                de entregar um legado. Cada estrutura que erguemos é uma mistura harmoniosa de paixão e tradição,
+                características que definem nossa identidade.
+            </p>
+            <ul class="text-gray-300 text-left inline-block list-disc list-inside"  style="text-align: justify;">
+                <li><b>Paixão:</b> Nossa paixão pela construção é o que nos motiva a buscar sempre a excelência. Cada
+                    detalhe é cuidadosamente pensado, cada material escolhido com rigor, e cada acabamento é executado
+                    com a máxima precisão. Essa dedicação intensa à qualidade e ao design garante que cada projeto da M.
+                    Trento não seja apenas uma construção, mas uma verdadeira obra de arte. É essa paixão que nos
+                    impulsiona a superar expectativas e criar espaços que encantam e inspiram.</li>
+                <li><b>Tradição:</b> Acreditamos que toda grande construção começa no
+                    invisível — na fé, no amor e na união que carregamos como alicerce da vida.</li>
+            </ul>
+            </br></br></br></br>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">O Compromisso M. Trento</h2>
+            <p class="text-gray-300 mx-auto mb-8"  style="text-align: justify;">
+                Nosso compromisso com a paixão e a tradição se estende a cada etapa do processo de construção. Desde o
+                primeiro esboço até a entrega final, trabalhamos lado a lado com nossos clientes, garantindo que suas
+                visões se tornem realidade. Acreditamos que construir é mais do que erguer paredes – é criar lares,
+                ambientes que acolhem e que se tornam parte da história de quem os habita.
+
+                Na M. Trento, estamos comprometidos em transformar sonhos em realidade, sempre com a mesma paixão e
+                tradição que nos definem. Cada projeto é uma nova página em nossa história, uma nova oportunidade de
+                construir com alma, dedicação e um olhar voltado para o futuro, sem jamais esquecer as raízes que nos
+                inspiram.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="contact" class="py-20 section bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">Pronto para construir o seu sonho?</h2>
+            <p class="text-black max-w-2xl mx-auto mb-8">
+                Fale conosco para saber mais sobre nossos projetos e como podemos ajudá-lo a encontrar o seu lugar
+                perfeito.
+            </p>
+            <a href="index.html#contact"
+                class="gold-bg text-dark-bg px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition">
+                Entrar em contato
+            </a>
+        </div>
+    </section>
+
+    <footer class="darker-bg py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold gold-text title-font mb-2">M.Trento</div>
+                    <p class="text-gray-400">Construindo sonhos, realizando histórias.</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Links</h4>
+                        <ul class="space-y-1">
+                            <li><a href="index.html" class="text-gray-400 hover:gold-text transition">Início</a></li>
+                            <li><a href="index.html#opportunities"
+                                    class="text-gray-400 hover:gold-text transition">Oportunidades</a></li>
+                            <li><a href="#" class="gold-text transition">Quem somos</a></li>
+                            <li><a href="index.html#contact"
+                                    class="text-gray-400 hover:gold-text transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Legal</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Política de Privacidade</a>
+                            </li>
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 M.Trento Construtora. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set navbar to scrolled state since there's no hero section
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.add('nav-scrolled');
+        });
+
+        // Scroll animation for sections
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

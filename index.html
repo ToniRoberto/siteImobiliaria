@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Trento Construtora - Transformando sonhos em realidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1F1F1F;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-text {
+            color: #D4AF37;
+        }
+        .gold-border {
+            border-color: #D4AF37;
+        }
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+        .dark-bg {
+            background-color: #1F1F1F;
+        }
+        .darker-bg {
+            background-color: #171717;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .property-card {
+            transition: all 0.3s ease;
+        }
+        .nav-scrolled {
+            background-color: rgba(31, 31, 31, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(31, 31, 31, 0.9), rgba(31, 31, 31, 0.7));
+        }
+        .about-overlay {
+            background: linear-gradient(to right, rgba(31, 31, 31, 0.9), rgba(31, 31, 31, 0.5));
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #D4AF37 !important;
+        }
+    </style>
+</head>
+<body class="dark-bg">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text title-font">M.Trento</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:gold-text transition">Início</a>
+                <a href="#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="video" class="text-white hover:gold-text transition">Videos</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden darker-bg w-full px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-white hover:gold-text transition">Início</a>
+                <a href="#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Swiper -->
+    <section id="home" class="pt-20">
+        <div class="swiper-container h-screen">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative">
+                    <img src="predio1.webp" 
+                         alt="Modern building in Santa Catarina" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold text-white title-font mb-6">
+                                <span class="gold-text">Transformando sonhos</span> em paredes que acolhem sua história.
+                            </h1>
+                            <div class="flex space-x-4 mt-8">
+                                <a href="#opportunities" class="gold-bg text-dark-bg px-8 py-3 rounded font-medium hover:bg-opacity-90 transition">Ver imóveis</a>
+                                <a href="#contact" class="border-2 gold-border text-white px-8 py-3 rounded font-medium hover:bg-white hover:bg-opacity-10 transition">Fale conosco</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative">
+                    <img src="predio2.webp" 
+                         alt="Luxury apartment building" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold text-white title-font mb-6">
+                                <span class="gold-text">Excelência</span> em cada detalhe da sua futura casa.
+                            </h1>
+                            <div class="flex space-x-4 mt-8">
+                                <a href="#opportunities" class="gold-bg text-dark-bg px-8 py-3 rounded font-medium hover:bg-opacity-90 transition">Ver imóveis</a>
+                                <a href="#contact" class="border-2 gold-border text-white px-8 py-3 rounded font-medium hover:bg-white hover:bg-opacity-10 transition">Fale conosco</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <!--
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Construction site with workers" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold text-white title-font mb-6">
+                                <span class="gold-text">Qualidade</span> e compromisso em cada etapa da obra.
+                            </h1>
+                            <div class="flex space-x-4 mt-8">
+                                <a href="#opportunities" class="gold-bg text-dark-bg px-8 py-3 rounded font-medium hover:bg-opacity-90 transition">Ver imóveis</a>
+                                <a href="#contact" class="border-2 gold-border text-white px-8 py-3 rounded font-medium hover:bg-white hover:bg-opacity-10 transition">Fale conosco</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section id="opportunities" class="py-20 section bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2 gold-text title-font text-center">Oportunidades exclusivas</h2>
+            <p class="text-black mb-12 text-center max-w-2xl mx-auto">Descubra os empreendimentos que podem ser o seu próximo lar ou investimento</p>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-8 gold-text title-font flex items-center">
+                    <i class="fas fa-building mr-3"></i> Imóveis à venda
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Property 1 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Residencial Bella Vista" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 gold-bg text-dark-bg px-3 py-1 rounded-full text-sm font-medium">
+                                À venda
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Residencial Bella Vista</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> Florianópolis - SC</p>
+                            <p class="text-gray-300 mb-4">Apartamentos de 2 e 3 quartos com vista para o mar e área de lazer completa.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 2 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Condomínio Jardins" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 gold-bg text-dark-bg px-3 py-1 rounded-full text-sm font-medium">
+                                À venda
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Condomínio Jardins</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> Balneário Camboriú - SC</p>
+                            <p class="text-gray-300 mb-4">Casas de luxo com 4 suítes, piscina privativa e área gourmet.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 3 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Edifício Horizonte" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 gold-bg text-dark-bg px-3 py-1 rounded-full text-sm font-medium">
+                                À venda
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Edifício Horizonte</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> Joinville - SC</p>
+                            <p class="text-gray-300 mb-4">Apartamentos modernos de 1 e 2 quartos no centro da cidade.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-8 gold-text title-font flex items-center">
+                    <i class="fas fa-hard-hat mr-3"></i> Imóveis em construção
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Property 4 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Reserva da Serra" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Em construção
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Reserva da Serra</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> Blumenau - SC</p>
+                            <p class="text-gray-300 mb-4">Condomínio fechado com casas de alto padrão e vista para as montanhas.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 5 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://static.arboimoveis.com.br/COND0026_TONADR/20230124_1355231708353069620.jpg" 
+                                 alt="Torre Atlântico" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Em construção
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Torre Atlântico</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> Itajaí - SC</p>
+                            <p class="text-gray-300 mb-4">Edifício com apartamentos de luxo à beira-mar e marina privativa.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 6 -->
+                    <div class="property-card darker-bg rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/615460957.jpg?k=9fa06cbb62084deb7e28b55bbfc56532d44d543f0bf6bd99a5ff1ae787f4ee12&o=&hp=1&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Vila dos Lagos" 
+                                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Em construção
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Vila dos Lagos</h4>
+                            <p class="text-gray-300 mb-4"><i class="fas fa-map-marker-alt gold-text mr-2"></i> São José - SC</p>
+                            <p class="text-gray-300 mb-4">Lotes premium para construção de residências com vista para lagos.</p>
+                            <a href="#" class="gold-text font-medium hover:underline flex items-center">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">Vamos construir o seu sonho juntos?</h2>
+                <p class="text-black max-w-2xl mx-auto">Entre em contato conosco para mais informações sobre nossos empreendimentos ou para agendar uma visita.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-black mb-2">Seu nome</label>
+                            <input type="text" id="name" style="color: #171717;" class="w-full px-4 py-3 bg-white border border-gray-700 rounded-lg input-field focus:border-gold-500" placeholder="Digite seu nome">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-black mb-2">Seu e-mail</label>
+                            <input type="email" id="email" style="color: #171717;" class="w-full px-4 py-3 bg-white border border-gray-700 rounded-lg input-field focus:border-gold-500" placeholder="Digite seu e-mail">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-black mb-2">Seu telefone</label>
+                            <input type="tel" id="phone" style="color: #171717;" class="w-full px-4 py-3 bg-white border border-gray-700 rounded-lg input-field focus:border-gold-500" placeholder="Digite seu telefone">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-black mb-2">Sua mensagem</label>
+                            <textarea id="message" rows="4" style="color: #171717;" class="w-full px-4 py-3 bg-white border border-gray-700 rounded-lg input-field focus:border-gold-500" placeholder="Digite sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="gold-bg text-dark-bg px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition w-full">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2 lg:pl-12">
+                    <div class="bg-gray-800 rounded-lg p-8 h-full">
+                        <h3 class="text-xl font-bold mb-6 gold-text">Nossos contatos</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="gold-text mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Endereço</h4>
+                                    <p class="text-gray-300">Rua das Construções, 123 - Centro<br>Florianópolis - SC, 88010-000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="gold-text mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Telefone</h4>
+                                    <p class="text-gray-300">(48) 1234-5678</p>
+                                    <p class="text-gray-300">(48) 98765-4321 (WhatsApp)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="gold-text mr-4 mt-1">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">E-mail</h4>
+                                    <p class="text-gray-300">contato@mtrento.com.br</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <h4 class="font-bold text-white mb-4">Redes sociais</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="gold-text hover:text-white text-2xl">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="gold-text hover:text-white text-2xl">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="gold-text hover:text-white text-2xl">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="gold-text hover:text-white text-2xl">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="darker-bg py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold gold-text title-font mb-2">M.Trento</div>
+                    <p class="text-gray-400">Construindo sonhos, realizando histórias.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Links</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#home" class="text-gray-400 hover:gold-text transition">Início</a></li>
+                            <li><a href="#opportunities" class="text-gray-400 hover:gold-text transition">Oportunidades</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:gold-text transition">Quem somos</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:gold-text transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Legal</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Política de Privacidade</a></li>
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 M.Trento Construtora. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Scroll animation for sections
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

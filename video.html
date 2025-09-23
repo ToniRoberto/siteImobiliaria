@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Trento Construtora - Galeria de Vídeos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1F1F1F;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .gold-border {
+            border-color: #D4AF37;
+        }
+
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+
+        .dark-bg {
+            background-color: #1F1F1F;
+        }
+
+        .darker-bg {
+            background-color: #171717;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-scrolled {
+            background-color: rgba(31, 31, 31, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            /* Para centralizar o ícone de play */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Garante que a imagem cubra todo o espaço sem distorcer */
+            position: absolute;
+            /* Para o ícone de play ficar acima dela */
+            top: 0;
+            left: 0;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+            /* Garante que o ícone de play fique acima da imagem */
+        }
+
+        .gallery-item:hover .play-icon {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #lightbox-video {
+            max-width: 90vw;
+            max-height: 90vh;
+            outline: none;
+            background-color: black;
+            border-radius: 0.5rem;
+            /* Para combinar com as imagens da galeria */
+        }
+    </style>
+</head>
+
+<body class="dark-bg">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text title-font">M.Trento</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="video" class="text-white hover:gold-text transition">Videos</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden darker-bg w-full px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="galeria" class="text-white hover:gold-text transition">Galeria</a>
+                <a href="plantas" class="text-white hover:gold-text transition">Plantas</a>
+                <a href="video" class="text-white hover:gold-text transition">Videos</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 section darker-bg pt-40">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 gold-text title-font">Nossa Galeria de Vídeos</h1>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                Assista aos nossos projetos ganharem vida em vídeo.
+            </p>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <video src="videos/video1.mp4" preload="auto" controls="" style="width: 100%; height: 100%;"></video>
+                <video src="videos/video2.mp4" preload="auto" controls="" style="width: 100%; height: 100%;"></video>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 section bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">Pronto para construir o seu sonho?</h2>
+            <p class="text-black max-w-2xl mx-auto mb-8">
+                Fale conosco para saber mais sobre nossos projetos e como podemos ajudá-lo a encontrar o seu lugar
+                perfeito.
+            </p>
+            <a href="index.html#contact"
+                class="gold-bg text-dark-bg px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition">
+                Entrar em contato
+            </a>
+        </div>
+    </section>
+
+    <footer class="darker-bg py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold gold-text title-font mb-2">M.Trento</div>
+                    <p class="text-gray-400">Construindo sonhos, realizando histórias.</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Links</h4>
+                        <ul class="space-y-1">
+                            <li><a href="index.html" class="text-gray-400 hover:gold-text transition">Início</a></li>
+                            <li><a href="index.html#opportunities"
+                                    class="text-gray-400 hover:gold-text transition">Oportunidades</a></li>
+                            <li><a href="quemsomos.html" class="text-gray-400 hover:gold-text transition">Quem somos</a>
+                            </li>
+                            <li><a href="galeria.html" class="gold-text transition">Galeria de Vídeos</a></li>
+                            <li><a href="index.html#contact"
+                                    class="text-gray-400 hover:gold-text transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Legal</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Política de Privacidade</a>
+                            </li>
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 M.Trento Construtora. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox"
+        class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[100] hidden transition-opacity duration-300">
+        <div class="relative max-w-full max-h-full p-4">
+            <button id="close-lightbox"
+                class="absolute -top-10 right-0 text-white text-3xl z-[110] font-bold transition-transform duration-300 hover:scale-110">&times;</button>
+
+            <video id="lightbox-video" src="" controls></video>
+        </div>
+    </div>
+
+    <script>
+        // Toggle do menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animação da barra de navegação
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.add('nav-scrolled');
+        });
+
+        // Animação de rolagem para as seções
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Script do Lightbox (Zoom de Vídeos Locais) ---
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        const closeLightboxButton = document.getElementById('close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault(); // Impede o link de navegar
+
+                const videoSrc = item.dataset.videoSrc; // Pega o endereço do vídeo
+
+                if (videoSrc) {
+                    lightboxVideo.src = videoSrc; // Define o endereço do vídeo
+                    lightbox.classList.remove('hidden'); // Exibe o modal
+                    lightboxVideo.play(); // Inicia a reprodução
+                }
+            });
+        });
+
+        closeLightboxButton.addEventListener('click', () => {
+            lightbox.classList.add('hidden'); // Oculta o modal
+            lightboxVideo.pause(); // Pausa a reprodução
+            lightboxVideo.src = ''; // Limpa a fonte do vídeo para parar completamente
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightboxVideo.pause(); // Pausa a reprodução
+                lightboxVideo.src = ''; // Limpa a fonte do vídeo
+            }
+        });
+    </script>
+</body>
+
+</html>
