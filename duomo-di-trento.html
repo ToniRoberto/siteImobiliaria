@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Trento Construtora - Duomo di Trento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1F1F1F;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .gold-border {
+            border-color: #D4AF37;
+        }
+
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+
+        .dark-bg {
+            background-color: #1F1F1F;
+        }
+
+        .darker-bg {
+            background-color: #171717;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-scrolled {
+            background-color: rgba(31, 31, 31, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item:hover .play-icon {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            outline: none;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body class="dark-bg">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 nav-scrolled">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <img src="MTRENTO-BRANCA.png" alt="M.Trento Logo" class="h-20">
+            <div class="hidden md:flex space-x-8">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="empreendimentos" class="text-white hover:gold-text transition">Empreendimentos</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden darker-bg w-full px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index" class="text-white hover:gold-text transition">Início</a>
+                <a href="empreendimentos" class="text-white hover:gold-text transition">Empreendimentos</a>
+                <a href="./#opportunities" class="text-white hover:gold-text transition">Oportunidades</a>
+                <a href="quemsomos" class="text-white hover:gold-text transition">Quem somos</a>
+                <a href="./#contact" class="text-white hover:gold-text transition">Contato</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <section class="py-20 section darker-bg pt-40">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 gold-text title-font">Duomo di Trento</h1>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                Detalhes completos, fotos, plantas baixas e vídeos do empreendimento.
+            </p>
+            <div class="flex justify-center gap-8">
+                <a href="#photos"
+                    class="mt-6 gold-bg text-dark-bg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    Fotos
+                </a>
+                <a href="#floorplans"
+                    class="mt-6 gold-bg text-dark-bg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    Plantas
+                </a>
+                <a href="#videos"
+                    class="mt-6 gold-bg text-dark-bg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    Vídeos
+                </a>
+                <a href="#addresses"
+                    class="mt-6 gold-bg text-dark-bg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    Endereços
+                </a>
+            </div>
+    </section>
+
+    <section id="photos" class="py-20 section bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10 text-black">Fotos do Empreendimento</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img1.webp" alt="Foto 1 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img2.webp" alt="Foto 2 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img3.webp" alt="Foto 3 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img4.webp" alt="Foto 4 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img5.webp" alt="Foto 5 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img6.webp" alt="Foto 6 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img7.webp" alt="Foto 7 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img8.webp" alt="Foto 8 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a> <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imggaleriaduomo/img9.webp" alt="Foto 9 do Duomo di Trento"
+                        class="w-full h-80 object-cover rounded-lg">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="floorplans" class="py-20 section dark-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Plantas Baixas</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imgplantasduomo/img1.webp" alt="Planta Baixa 1"
+                        class="w-full h-80 object-contain rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imgplantasduomo/img2.webp" alt="Planta Baixa 2"
+                        class="w-full h-80 object-contain rounded-lg">
+                </a>
+                <a href="#" class="gallery-item rounded-lg shadow-lg relative block" data-type="image">
+                    <img src="imgplantasduomo/img3.webp" alt="Planta Baixa 2"
+                        class="w-full h-80 object-contain rounded-lg">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="py-20 section bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10 text-black">Vídeos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <video src="videosduomo/video1.mp4" preload="auto" controls=""
+                    style="width: 100%; height: 100%;"></video>
+                <video src="videosduomo/video2.mp4" preload="auto" controls=""
+                    style="width: 100%; height: 100%;"></video>
+            </div>
+        </div>
+    </section>
+
+    <section id="addresses" class="py-20 section dark-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Endereço</h2>
+            <p class="text-center mb-12 max-w-2xl mx-auto">
+                Rua Nilvio Lino da Silva, s/n - Balneário Perequê, Porto Belo/SC
+            </p>
+            <div class="container mx-auto px-6 py-12">
+                <div class="relative overflow-hidden rounded-lg shadow-2xl" style="height: 60vh;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3550.090898730551!2d-48.5747186!3d-27.153430099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDA5JzEyLjQiUyA0OMKwMzQnMjkuMCJX!5e0!3m2!1spt-BR!2sbr!4v1758679767793!5m2!1spt-BR!2sbr"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 section bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text title-font">Pronto para construir o seu sonho?</h2>
+            <p class="text-black max-w-2xl mx-auto mb-8">
+                Fale conosco para saber mais sobre nossos projetos e como podemos ajudá-lo a encontrar o seu lugar
+                perfeito.
+            </p>
+            <a href="index.html#contact"
+                class="gold-bg text-dark-bg px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition">
+                Entrar em contato
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="darker-bg py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <img src="MTRENTO-BRANCA.png" alt="M.Trento Logo" class="h-20">
+                    <p class="text-gray-400">Construindo sonhos, realizando histórias.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Links</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#home" class="text-gray-400 hover:gold-text transition">Início</a></li>
+                            <li><a href="#opportunities" class="text-gray-400 hover:gold-text transition">Oportunidades</a></li>
+                            <li><a href="quemsomos" class="text-gray-400 hover:gold-text transition">Quem somos</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:gold-text transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Legal</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Política de Privacidade</a></li>
+                            <li><a href="#" class="text-gray-400 hover:gold-text transition">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 M.Trento Construtora. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox"
+        class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[100] hidden transition-opacity duration-300">
+        <div class="relative max-w-full max-h-full p-4">
+            <button id="close-lightbox"
+                class="absolute -top-10 right-0 text-white text-3xl z-[110] font-bold transition-transform duration-300 hover:scale-110">&times;</button>
+
+            <img id="lightbox-image" src="" alt="Conteúdo ampliado" class="max-w-full max-h-[90vh] rounded-lg hidden">
+            <video id="lightbox-video" src="" controls class="hidden"></video>
+            <iframe id="lightbox-iframe" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen class="hidden"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Toggle do menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animação da barra de navegação
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.add('nav-scrolled');
+        });
+
+        // Animação de rolagem para as seções
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Script do Lightbox Unificado ---
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const closeLightboxButton = document.getElementById('close-lightbox');
+
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxIframe = document.getElementById('lightbox-iframe');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Esconde todo o conteúdo anterior do lightbox
+                lightboxImage.classList.add('hidden');
+                lightboxVideo.classList.add('hidden');
+                lightboxIframe.classList.add('hidden');
+
+                const itemType = item.dataset.type;
+
+                if (itemType === 'image') {
+                    const imageUrl = item.querySelector('img').src;
+                    lightboxImage.src = imageUrl;
+                    lightboxImage.classList.remove('hidden');
+                } else if (itemType === 'video') {
+                    const videoSrc = item.dataset.videoSrc;
+                    const videoId = item.dataset.videoId;
+
+                    if (videoSrc) {
+                        lightboxVideo.src = videoSrc;
+                        lightboxVideo.classList.remove('hidden');
+                        lightboxVideo.play();
+                    } else if (videoId) {
+                        const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        lightboxIframe.src = videoUrl;
+                        lightboxIframe.classList.remove('hidden');
+                    }
+                }
+
+                lightbox.classList.remove('hidden');
+            });
+        });
+
+        closeLightboxButton.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
+            lightboxIframe.src = '';
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightboxVideo.pause();
+                lightboxVideo.src = '';
+                lightboxIframe.src = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
